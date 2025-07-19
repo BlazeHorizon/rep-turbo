@@ -1,9 +1,12 @@
 extends Node2D
 
 @export var enemy_scene: PackedScene
+@export var coin_scene: PackedScene
 @onready var enemy_timer: Timer = $EnemyTimer
 @onready var left_spawners: Node = $LeftSpawners
 @onready var right_spawners: Node = $RightSpawners
+@onready var coin_timer: Timer = $CoinTimer
+
 var active_spawners: Array[Node]
 
 
@@ -29,3 +32,15 @@ func _on_enemy_timer_timeout() -> void:
 		
 		add_child(enemy)
 		
+
+
+func _on_coin_timer_timeout() -> void:
+	var coin = coin_scene.instantiate()
+	coin.scale = Vector2(4.0, 4.0)
+	coin.position = Vector2(randi_range(1, 1152), randi_range(1, 648))
+	for i in 50:
+		if coin.position.x > 890 and coin.position.y < 125:
+			coin.position = Vector2(randi_range(1, 1152), randi_range(1, 648))
+		else:
+			break
+	add_child(coin)
