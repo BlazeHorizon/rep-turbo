@@ -18,6 +18,8 @@ animations = [{
 size = Vector2(31, 5)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 32768
+collision_mask = 32768
 script = ExtResource("1_a3pup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -25,7 +27,14 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7xxa4")
 animation = &"Idle"
 
-[node name="HitBox" type="CollisionShape2D" parent="."]
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="HitBoxCollision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_d3b2g")
+debug_color = Color(0.68, 0.570973, 0.1768, 0.419608)
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_d3b2g")
 debug_color = Color(0.68, 0.570973, 0.1768, 0.419608)

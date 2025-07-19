@@ -29,6 +29,7 @@ tile_map_data = PackedByteArray("AAAAAAIAAQAOABMAAAABAAIAAQAOABMAAAACAAIAAQAOABM
 tile_set = SubResource("TileSet_1bvp3")
 
 [node name="EnemyTimer" type="Timer" parent="GameStage"]
+wait_time = 0.5
 autostart = true
 
 [node name="LeftSpawners" type="Node" parent="GameStage"]

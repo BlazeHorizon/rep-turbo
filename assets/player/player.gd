@@ -30,7 +30,10 @@ func _physics_process(_delta: float) -> void:
 	if player_state == "Lost":
 		animated_sprite_2d.play("Hurt")
 		print("Game Over")
+		await animated_sprite_2d.animation_finished
+		queue_free()
 
 
-func _on_hit_by_enemy():
-	player_state = "Lost"
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name == "HitBox":
+		player_state = "Lost"

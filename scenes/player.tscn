@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c1clatjn8uwdh" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0004_Layer-5.png" id="15_a38lo"]
 [ext_resource type="Texture2D" uid="uid://kvq5lh0r3mqe" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0005_Layer-6.png" id="16_4ni07"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4r1p"]
+size = Vector2(10, 6)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u8vuu"]
 animations = [{
 "frames": [{
@@ -35,7 +38,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_qfm1y")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 5.0
 }, {
@@ -80,19 +83,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4r1p"]
-size = Vector2(10, 6)
-
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 65536
+collision_mask = 65536
 script = ExtResource("1_f1ej7")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_y4r1p")
+debug_color = Color(0.678431, 0.572549, 0.176471, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0, 6.077, 0, 1)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"Idle"
+animation = &"Hurt"
 
-[node name="HurtBox" type="CollisionShape2D" parent="."]
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="HurtBoxCollision" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_y4r1p")
 debug_color = Color(0.678431, 0.572549, 0.176471, 0.419608)
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_area_2d_area_entered"]

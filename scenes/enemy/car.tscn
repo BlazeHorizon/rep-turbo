@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://bfrgdb4x5yq3n" path="res://scenes/enemy/enemy.tscn" id="1_7822p"]
 
 [node name="Car" instance=ExtResource("1_7822p")]
+collision_layer = 2
