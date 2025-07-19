@@ -20,6 +20,8 @@ func _on_enemy_timer_timeout() -> void:
 		var enemy = enemy_scene.instantiate()
 		enemy.scale = Vector2(4.0, 4.0)
 		enemy.position = s.position
+		enemy.speed = randi_range(100, 600)
+		enemy.color_change = Color(randf_range(0.0, 1.0), randf_range(0.0, 1.0), randf_range(0.0, 1.0))
 		if s in left_spawners.get_children():
 			enemy.direction = 1
 		else:
