@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=4 uid="uid://blnlyh4hslgks"]
+
+[ext_resource type="Script" uid="uid://nlfflvdrit25" path="res://assets/stage/game_stage.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://d3hicxqo112f4" path="res://assets/stage/tilemap.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d0uakknpkyny4" path="res://scenes/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bd1it76lq7i5r" path="res://scenes/enemy/car.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://dpq2wmoq0bg0g" path="res://assets/HUD/label_timer.gd" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bkilmwu2rowle" path="res://scenes/coin.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bbm2xfqydefaa" path="res://label_score.gd" id="6_272bh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
+texture = ExtResource("1_ig7tw")
+separation = Vector2i(1, 1)
+14:19/0 = 0
+2:24/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1bvp3"]
+sources/1 = SubResource("TileSetAtlasSource_h2yge")
+
+[sub_resource type="SystemFont" id="SystemFont_1bvp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font = SubResource("SystemFont_1bvp3")
+font_size = 64
+font_color = Color(0.145, 1, 0.1, 1)
+
+[node name="Main" type="Node"]
+metadata/_edit_horizontal_guides_ = [160.0]
+metadata/_edit_vertical_guides_ = [1152.0, 47.0]
+
+[node name="GameStage" type="Node2D" parent="."]
+script = ExtResource("1_1bvp3")
+enemy_scene = ExtResource("2_h2yge")
+coin_scene = ExtResource("6_7mycd")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="GameStage"]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAAAAIAAQAOABMAAAABAAIAAQAOABMAAAACAAIAAQAOABMAAAADAAIAAQAOABMAAAAEAAIAAQAOABMAAAAFAAIAAQAOABMAAAAGAAIAAQAOABMAAAAHAAIAAQAOABMAAAAIAAIAAQAOABMAAAAJAAIAAQAOABMAAAAKAAIAAQAOABMAAAALAAIAAQAOABMAAAAMAAIAAQAOABMAAAANAAIAAQAOABMAAAAOAAIAAQAOABMAAAAPAAIAAQAOABMAAAAQAAIAAQAOABMAAAARAAIAAQAOABMAAAAAAAMAAQAOABMAAAABAAMAAQAOABMAAAACAAMAAQAOABMAAAADAAMAAQAOABMAAAAEAAMAAQAOABMAAAAFAAMAAQAOABMAAAAGAAMAAQAOABMAAAAHAAMAAQAOABMAAAAIAAMAAQAOABMAAAAJAAMAAQAOABMAAAAKAAMAAQAOABMAAAALAAMAAQAOABMAAAAMAAMAAQAOABMAAAANAAMAAQAOABMAAAAOAAMAAQAOABMAAAAPAAMAAQAOABMAAAAQAAMAAQAOABMAAAARAAMAAQAOABMAAAAAAAQAAQAOABMAAAABAAQAAQAOABMAAAACAAQAAQAOABMAAAADAAQAAQAOABMAAAAEAAQAAQAOABMAAAAFAAQAAQAOABMAAAAGAAQAAQAOABMAAAAHAAQAAQAOABMAAAAIAAQAAQAOABMAAAAJAAQAAQAOABMAAAAKAAQAAQAOABMAAAALAAQAAQAOABMAAAAMAAQAAQAOABMAAAANAAQAAQAOABMAAAAOAAQAAQAOABMAAAAPAAQAAQAOABMAAAAQAAQAAQAOABMAAAARAAQAAQAOABMAAAAAAAUAAQAOABMAAAABAAUAAQAOABMAAAACAAUAAQAOABMAAAADAAUAAQAOABMAAAAEAAUAAQAOABMAAAAFAAUAAQAOABMAAAAGAAUAAQAOABMAAAAHAAUAAQAOABMAAAAIAAUAAQAOABMAAAAJAAUAAQAOABMAAAAKAAUAAQAOABMAAAALAAUAAQAOABMAAAAMAAUAAQAOABMAAAANAAUAAQAOABMAAAAOAAUAAQAOABMAAAAPAAUAAQAOABMAAAAQAAUAAQAOABMAAAARAAUAAQAOABMAAAAAAAYAAQAOABMAAAABAAYAAQAOABMAAAACAAYAAQAOABMAAAADAAYAAQAOABMAAAAEAAYAAQAOABMAAAAFAAYAAQAOABMAAAAGAAYAAQAOABMAAAAHAAYAAQAOABMAAAAIAAYAAQAOABMAAAAJAAYAAQAOABMAAAAKAAYAAQAOABMAAAALAAYAAQAOABMAAAAMAAYAAQAOABMAAAANAAYAAQAOABMAAAAOAAYAAQAOABMAAAAPAAYAAQAOABMAAAAQAAYAAQAOABMAAAARAAYAAQAOABMAAAAAAAcAAQAOABMAAAABAAcAAQAOABMAAAACAAcAAQAOABMAAAADAAcAAQAOABMAAAAEAAcAAQAOABMAAAAFAAcAAQAOABMAAAAGAAcAAQAOABMAAAAHAAcAAQAOABMAAAAIAAcAAQAOABMAAAAJAAcAAQAOABMAAAAKAAcAAQAOABMAAAALAAcAAQAOABMAAAAMAAcAAQAOABMAAAANAAcAAQAOABMAAAAOAAcAAQAOABMAAAAPAAcAAQAOABMAAAAQAAcAAQAOABMAAAARAAcAAQAOABMAAAAAAAgAAQACABgAAAABAAgAAQACABgAAAACAAgAAQACABgAAAADAAgAAQACABgAAAAEAAgAAQACABgAAAAFAAgAAQACABgAAAAGAAgAAQACABgAAAAHAAgAAQACABgAAAAIAAgAAQACABgAAAAJAAgAAQACABgAAAAKAAgAAQACABgAAAALAAgAAQACABgAAAAMAAgAAQACABgAAAANAAgAAQACABgAAAAOAAgAAQACABgAAAAPAAgAAQACABgAAAAQAAgAAQACABgAAAARAAgAAQACABgAAAAAAAkAAQACABgAAAABAAkAAQACABgAAAACAAkAAQACABgAAAADAAkAAQACABgAAAAEAAkAAQACABgAAAAFAAkAAQACABgAAAAGAAkAAQACABgAAAAHAAkAAQACABgAAAAIAAkAAQACABgAAAAJAAkAAQACABgAAAAKAAkAAQACABgAAAALAAkAAQACABgAAAAMAAkAAQACABgAAAANAAkAAQACABgAAAAOAAkAAQACABgAAAAPAAkAAQACABgAAAAQAAkAAQACABgAAAARAAkAAQACABgAAAAAAAEAAQACABgAAAABAAEAAQACABgAAAACAAEAAQACABgAAAADAAEAAQACABgAAAAEAAEAAQACABgAAAAFAAEAAQACABgAAAAGAAEAAQACABgAAAAHAAEAAQACABgAAAAIAAEAAQACABgAAAAJAAEAAQACABgAAAAKAAEAAQACABgAAAALAAEAAQACABgAAAAMAAEAAQACABgAAAANAAEAAQACABgAAAAOAAEAAQACABgAAAAPAAEAAQACABgAAAAQAAEAAQACABgAAAARAAEAAQACABgAAAAAAAAAAQACABgAAAABAAAAAQACABgAAAACAAAAAQACABgAAAADAAAAAQACABgAAAAEAAAAAQACABgAAAAFAAAAAQACABgAAAAGAAAAAQACABgAAAAHAAAAAQACABgAAAAIAAAAAQACABgAAAAJAAAAAQACABgAAAAKAAAAAQACABgAAAALAAAAAQACABgAAAAMAAAAAQACABgAAAANAAAAAQACABgAAAAOAAAAAQACABgAAAAPAAAAAQACABgAAAAQAAAAAQACABgAAAARAAAAAQACABgAAAA=")
+tile_set = SubResource("TileSet_1bvp3")
+
+[node name="EnemyTimer" type="Timer" parent="GameStage"]
+wait_time = 0.3
+autostart = true
+
+[node name="CoinTimer" type="Timer" parent="GameStage"]
+autostart = true
+
+[node name="LeftSpawners" type="Node" parent="GameStage"]
+
+[node name="EnemySpawner" type="Node2D" parent="GameStage/LeftSpawners"]
+position = Vector2(1, 160)
+
+[node name="EnemySpawner2" type="Node2D" parent="GameStage/LeftSpawners"]
+position = Vector2(0, 224)
+
+[node name="EnemySpawner3" type="Node2D" parent="GameStage/LeftSpawners"]
+position = Vector2(0, 288)
+
+[node name="EnemySpawner4" type="Node2D" parent="GameStage/LeftSpawners"]
+position = Vector2(0, 352)
+
+[node name="EnemySpawner5" type="Node2D" parent="GameStage/LeftSpawners"]
+position = Vector2(0, 416)
+
+[node name="EnemySpawner6" type="Node2D" parent="GameStage/LeftSpawners"]
+position = Vector2(0, 480)
+
+[node name="RightSpawners" type="Node" parent="GameStage"]
+
+[node name="EnemySpawner7" type="Node2D" parent="GameStage/RightSpawners"]
+position = Vector2(1152, 160)
+
+[node name="EnemySpawner8" type="Node2D" parent="GameStage/RightSpawners"]
+position = Vector2(1152, 224)
+
+[node name="EnemySpawner9" type="Node2D" parent="GameStage/RightSpawners"]
+position = Vector2(1152, 288)
+
+[node name="EnemySpawner10" type="Node2D" parent="GameStage/RightSpawners"]
+position = Vector2(1152, 352)
+
+[node name="EnemySpawner11" type="Node2D" parent="GameStage/RightSpawners"]
+position = Vector2(1152, 416)
+
+[node name="EnemySpawner12" type="Node2D" parent="GameStage/RightSpawners"]
+position = Vector2(1152, 480)
+
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(46, 45)
+scale = Vector2(4, 4)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.16
+
+[node name="LabelTimer" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+grow_horizontal = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_1bvp3")
+vertical_alignment = 1
+justification_flags = 161
+script = ExtResource("5_7mycd")
+
+[node name="LabelScore" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+grow_horizontal = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_1bvp3")
+script = ExtResource("6_272bh")
+
+[connection signal="timeout" from="GameStage/EnemyTimer" to="GameStage" method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="GameStage/CoinTimer" to="GameStage" method="_on_coin_timer_timeout"]

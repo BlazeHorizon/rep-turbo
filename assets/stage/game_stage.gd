@@ -37,10 +37,10 @@ func _on_enemy_timer_timeout() -> void:
 func _on_coin_timer_timeout() -> void:
 	var coin = coin_scene.instantiate()
 	coin.scale = Vector2(4.0, 4.0)
-	coin.position = Vector2(randi_range(1, 1152), randi_range(1, 648))
+	coin.position = Vector2(randi_range(20, 1152), randi_range(20, 648))
 	for i in 50:
 		if coin.position.x > 890 and coin.position.y < 125:
-			coin.position = Vector2(randi_range(1, 1152), randi_range(1, 648))
+			coin.position = Vector2(randi_range(20, 1152), randi_range(20, 648))
 		else:
 			break
 	add_child(coin)
