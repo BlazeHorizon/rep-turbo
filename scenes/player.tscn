@@ -1,19 +1,21 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0uakknpkyny4"]
+[gd_scene load_steps=19 format=3 uid="uid://d0uakknpkyny4"]
 
-[ext_resource type="Texture2D" uid="uid://dpa7pwphtgqoq" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0000_Layer-1.png" id="1_dqkch"]
+[ext_resource type="Texture2D" uid="uid://yx3jkyqwhoml" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0000_Layer-1.png" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://cqu1ckbu26dqa" path="res://assets/player/player.gd" id="1_f1ej7"]
-[ext_resource type="Texture2D" uid="uid://c7x5ufnbw6vet" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0000_Layer-1.png" id="1_jej6c"]
-[ext_resource type="Texture2D" uid="uid://y60w61udg3dp" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0001_Layer-2.png" id="2_f1ej7"]
-[ext_resource type="Texture2D" uid="uid://ce7bqyuvgb8d" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0001_Layer-2.png" id="2_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://cwabv8xurlhmv" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0002_Layer-3.png" id="3_oprun"]
-[ext_resource type="Texture2D" uid="uid://du8q82jx24bek" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0002_Layer-3.png" id="3_tuyoq"]
-[ext_resource type="Texture2D" uid="uid://dih6ttpf2ert6" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0003_Layer-4.png" id="4_fjrip"]
-[ext_resource type="Texture2D" uid="uid://daqmgqa8omvov" path="res://assets/player/grotto_escape_2_lizard/sprites/run/_0000_Layer-1.png" id="5_y4r1p"]
-[ext_resource type="Texture2D" uid="uid://bu44hu0jiy31v" path="res://assets/player/grotto_escape_2_lizard/sprites/run/_0001_Layer-2.png" id="6_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://e7hwxi5sbd77" path="res://assets/player/grotto_escape_2_lizard/sprites/run/_0002_Layer-3.png" id="7_3v2ag"]
-[ext_resource type="Texture2D" uid="uid://bbguavmwoii4p" path="res://assets/player/grotto_escape_2_lizard/sprites/run/_0003_Layer-4.png" id="8_jej6c"]
-[ext_resource type="Texture2D" uid="uid://detdqjs7e3c76" path="res://assets/player/grotto_escape_2_lizard/sprites/run/_0004_Layer-5.png" id="9_f1ej7"]
-[ext_resource type="Texture2D" uid="uid://b46m0q463r0sc" path="res://assets/player/grotto_escape_2_lizard/sprites/run/_0005_Layer-6.png" id="10_oprun"]
+[ext_resource type="Texture2D" uid="uid://cvhi1ku0h5ldy" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0000_Layer-1.png" id="1_jej6c"]
+[ext_resource type="Texture2D" uid="uid://b8c72kba4n5je" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0001_Layer-2.png" id="2_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://bkcberquxbfwo" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0001_Layer-2.png" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cls0rixau3y44" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0002_Layer-3.png" id="3_oprun"]
+[ext_resource type="Texture2D" uid="uid://r6u7tarukbf6" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0002_Layer-3.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://cvn36djr27acf" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0003_Layer-4.png" id="4_fjrip"]
+[ext_resource type="Texture2D" uid="uid://blwel8e5bkslj" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0003_Layer-4.png" id="5_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://dmnhx4cexegyf" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0004_Layer-5.png" id="6_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://c2bogvistyg8y" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0000_Layer-1.png" id="11_fulsm"]
+[ext_resource type="Texture2D" uid="uid://pdlh7osh24qb" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0001_Layer-2.png" id="12_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://cwmyvq4imqyw7" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0002_Layer-3.png" id="13_60mlk"]
+[ext_resource type="Texture2D" uid="uid://dt3kcv7lel60x" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0003_Layer-4.png" id="14_i4ail"]
+[ext_resource type="Texture2D" uid="uid://c1clatjn8uwdh" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0004_Layer-5.png" id="15_a38lo"]
+[ext_resource type="Texture2D" uid="uid://kvq5lh0r3mqe" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0005_Layer-6.png" id="16_4ni07"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u8vuu"]
 animations = [{
@@ -26,8 +28,14 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_oprun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a8ls1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qfm1y")
 }],
-"loop": false,
+"loop": true,
 "name": &"Hurt",
 "speed": 5.0
 }, {
@@ -50,22 +58,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_y4r1p")
+"texture": ExtResource("11_fulsm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_d2wvv")
+"texture": ExtResource("12_4r5pv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_3v2ag")
+"texture": ExtResource("13_60mlk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_jej6c")
+"texture": ExtResource("14_i4ail")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_f1ej7")
+"texture": ExtResource("15_a38lo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_oprun")
+"texture": ExtResource("16_4ni07")
 }],
 "loop": true,
 "name": &"Walking",
@@ -81,11 +89,10 @@ script = ExtResource("1_f1ej7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0, 6.077, 0, 1)
 texture_filter = 1
-position = Vector2(16, -11)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"Walking"
+animation = &"Idle"
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_y4r1p")
 debug_color = Color(0.678431, 0.572549, 0.176471, 0.419608)

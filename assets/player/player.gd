@@ -13,6 +13,10 @@ func _physics_process(_delta: float) -> void:
 		var direction := Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 		if direction:
 			animated_sprite_2d.play("Walking")
+			if direction.x < 0:
+				animated_sprite_2d.flip_h = true
+			else:
+				animated_sprite_2d.flip_h = false
 			velocity = direction 
 			velocity = velocity.normalized() * SPEED
 		

@@ -1,31 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://6fco7jn0tmqn"]
+[gd_scene load_steps=2 format=3 uid="uid://bd1it76lq7i5r"]
 
-[ext_resource type="Texture2D" uid="uid://dbws7uem2n6g6" path="res://assets/enemy/kinney_cars/sports_race.png" id="1_w61j4"]
-[ext_resource type="Script" uid="uid://c5spkdkg0qihe" path="res://assets/enemy/scripts/car.gd" id="1_y8lpr"]
+[ext_resource type="PackedScene" uid="uid://bfrgdb4x5yq3n" path="res://scenes/enemy/enemy.tscn" id="1_7822p"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7xxa4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_w61j4")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3b2g"]
-size = Vector2(31, 5)
-
-[node name="Car" type="CharacterBody2D"]
-script = ExtResource("1_y8lpr")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_7xxa4")
-animation = &"Idle"
-
-[node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1.5)
-shape = SubResource("RectangleShape2D_d3b2g")
-debug_color = Color(0.68, 0.570973, 0.1768, 0.419608)
+[node name="Car" instance=ExtResource("1_7822p")]
