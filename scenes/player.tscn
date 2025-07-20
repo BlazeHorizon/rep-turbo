@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cvhi1ku0h5ldy" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0000_Layer-1.png" id="1_jej6c"]
 [ext_resource type="Texture2D" uid="uid://b8c72kba4n5je" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0001_Layer-2.png" id="2_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://bkcberquxbfwo" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0001_Layer-2.png" id="2_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://cls0rixau3y44" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0002_Layer-3.png" id="3_oprun"]
 [ext_resource type="Texture2D" uid="uid://r6u7tarukbf6" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0002_Layer-3.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://cah4qr6xolcy1" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/Tongue test.png" id="4_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://cvn36djr27acf" path="res://assets/player/grotto_escape_2_lizard/sprites/idle/_0003_Layer-4.png" id="4_fjrip"]
-[ext_resource type="Texture2D" uid="uid://blwel8e5bkslj" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0003_Layer-4.png" id="5_a8ls1"]
-[ext_resource type="Texture2D" uid="uid://dmnhx4cexegyf" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/_0004_Layer-5.png" id="6_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://vpdogoag5jrt" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/Tongue test2.png" id="5_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://fcinxd4q4dl4" path="res://assets/player/grotto_escape_2_lizard/sprites/tongue/Tongue test3.png" id="6_fulsm"]
 [ext_resource type="Texture2D" uid="uid://c2bogvistyg8y" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0000_Layer-1.png" id="11_fulsm"]
 [ext_resource type="Texture2D" uid="uid://pdlh7osh24qb" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0001_Layer-2.png" id="12_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://cwmyvq4imqyw7" path="res://assets/player/grotto_escape_2_lizard/sprites/walk/_0002_Layer-3.png" id="13_60mlk"]
@@ -30,13 +30,13 @@ animations = [{
 "texture": ExtResource("2_f1ej7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_oprun")
+"texture": ExtResource("4_a8ls1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_a8ls1")
+"texture": ExtResource("5_qfm1y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_qfm1y")
+"texture": ExtResource("6_fulsm")
 }],
 "loop": false,
 "name": &"Hurt",
@@ -106,5 +106,7 @@ collision_layer = 5
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_y4r1p")
 debug_color = Color(0.678431, 0.572549, 0.176471, 0.419608)
+
+[node name="PlayerSFX" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_area_2d_area_entered"]

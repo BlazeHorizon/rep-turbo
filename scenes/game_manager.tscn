@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0wlg1gcehmt6"]
+[gd_scene load_steps=4 format=3 uid="uid://c0wlg1gcehmt6"]
 
 [ext_resource type="Script" uid="uid://dxfulw14fq1c0" path="res://assets/game_manager.gd" id="1_hwd4i"]
+[ext_resource type="AudioStream" uid="uid://cfxorjop7fhed" path="res://assets/collectables/coin/443258__lilmati__retro-coin-05.wav" id="2_glms7"]
+[ext_resource type="AudioStream" uid="uid://dnahayojebpne" path="res://assets/stage/455017__annoyedcactus__8bit-music-for-game.wav" id="3_udu3i"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_hwd4i")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CoinSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_glms7")
+volume_db = -10.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_udu3i")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
