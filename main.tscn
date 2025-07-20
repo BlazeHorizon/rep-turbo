@@ -154,8 +154,8 @@ Special Thanks:
 - The PRGDA discord community for being kind, encouraging, and fun.
 - The Genesis gang and my other friends, for always brightening my day.
 - The girlies for having been there for me all this time.
-- \"M\" for being a good friend and listener.
-- \"LF\" for believing in me, supporting me, and helping me do everything I thought I couldn't.
+- \"M\" for more things than I can count.
+- \"LF\" for changing my life, and helping me do everything I never thought I could.
 - ... and you!"
 
 [connection signal="player_lost" from="Player" to="." method="_on_player_player_lost"]
