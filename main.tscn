@@ -153,11 +153,17 @@ https://www.dafont.com/pixel-operator.font
 Special Thanks: 
 - The PRGDA discord community for being kind, encouraging, and fun.
 - The Genesis gang and my other friends, for always brightening my day.
-- The girlies for having been there for me all this time.
-- \"M\" for more things than I can count.
-- \"LF\" for changing my life, and helping me do everything I never thought I could.
+- \"The girlies\" group for supporting me.
+- \"MystiereArt\" for always being there for me, helping me more times than I can count.
+- \"L.F.\" for changing my life, and helping me do everything I never thought I could.
 - ... and you!"
+
+[node name="CreditsCloseButton" type="Button" parent="StartMenu/Control/CreditsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="player_lost" from="Player" to="." method="_on_player_player_lost"]
 [connection signal="pressed" from="StartMenu/Control/Panel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="StartMenu/Control/Panel/VBoxContainer/CreditsButton" to="StartMenu" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="StartMenu/Control/CreditsPanel/CreditsCloseButton" to="StartMenu" method="_on_credits_close_button_pressed"]
