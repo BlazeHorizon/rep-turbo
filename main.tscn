@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://blnlyh4hslgks"]
+[gd_scene load_steps=18 format=4 uid="uid://blnlyh4hslgks"]
 
 [ext_resource type="Script" uid="uid://nlfflvdrit25" path="res://assets/stage/game_stage.gd" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://df1jquf27q21g" path="res://main.gd" id="1_5vw27"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dpq2wmoq0bg0g" path="res://assets/HUD/label_timer.gd" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bkilmwu2rowle" path="res://scenes/coin.tscn" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://bbm2xfqydefaa" path="res://label_score.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://bnfnxpuaerrqg" path="res://start_menu.gd" id="10_4c57u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("1_ig7tw")
@@ -25,6 +26,18 @@ sources/1 = SubResource("TileSetAtlasSource_h2yge")
 font = SubResource("SystemFont_1bvp3")
 font_size = 64
 font_color = Color(0.145, 1, 0.1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font_size = 96
+font_color = Color(0.145098, 1, 0.101961, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4c57u"]
+font_size = 48
+font_color = Color(0.145098, 1, 0.101961, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font_size = 48
+font_color = Color(0.145098, 1, 0.101961, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_5vw27")
@@ -134,6 +147,87 @@ text = "Score: 0"
 label_settings = SubResource("LabelSettings_1bvp3")
 script = ExtResource("6_272bh")
 
+[node name="StartMenu" type="CanvasLayer" parent="."]
+script = ExtResource("10_4c57u")
+
+[node name="Control" type="Control" parent="StartMenu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="StartMenu/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="StartMenu/Control/PanelContainer"]
+layout_mode = 2
+text = "Rep-Turbo!"
+label_settings = SubResource("LabelSettings_kek77")
+
+[node name="Panel" type="Panel" parent="StartMenu/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46
+anchor_top = 0.3
+anchor_right = 0.58
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="StartMenu/Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+focus_neighbor_bottom = NodePath("../CreditsButton")
+
+[node name="LabelPlay" type="Label" parent="StartMenu/Control/Panel/VBoxContainer/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_4c57u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsButton" type="Button" parent="StartMenu/Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+focus_neighbor_top = NodePath("../PlayButton")
+
+[node name="LabelCredits" type="Label" parent="StartMenu/Control/Panel/VBoxContainer/CreditsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_efxa6")
+vertical_alignment = 1
+
 [connection signal="timeout" from="GameStage/EnemyTimer" to="GameStage" method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="GameStage/CoinTimer" to="GameStage" method="_on_coin_timer_timeout"]
 [connection signal="player_lost" from="Player" to="." method="_on_player_player_lost"]
+[connection signal="pressed" from="StartMenu/Control/Panel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

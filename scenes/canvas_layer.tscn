@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jmjvlnakr20f"]
+[gd_scene load_steps=9 format=3 uid="uid://jmjvlnakr20f"]
 
 [ext_resource type="Script" uid="uid://dtfbwnpdq1h2n" path="res://assets/HUD/h_box_container.gd" id="1_c4rma"]
 [ext_resource type="Script" uid="uid://dpxikuv046sei" path="res://scenes/canvas_layer.gd" id="1_ek3oe"]
@@ -8,12 +8,18 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ek3oe"]
 font_size = 48
+font_color = Color(0.145098, 1, 0.101961, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mg525"]
 font_size = 48
+font_color = Color(0.145098, 1, 0.101961, 1)
 
 [sub_resource type="Theme" id="Theme_c4rma"]
 default_font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_kfwc7"]
+font_size = 48
+font_color = Color(0.145098, 1, 0.101961, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_ek3oe")
@@ -77,7 +83,14 @@ anchor_bottom = 0.9
 offset_right = 8.0
 offset_bottom = 8.0
 theme = SubResource("Theme_c4rma")
+script = ExtResource("2_ghj5q")
+
+[node name="Label" type="Label" parent="Control/Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 48.0
 text = "Play Again?
 
 Press Space!"
-script = ExtResource("2_ghj5q")
+label_settings = SubResource("LabelSettings_kfwc7")
+horizontal_alignment = 1
