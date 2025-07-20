@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://jmjvlnakr20f"]
+
+[ext_resource type="Script" uid="uid://dtfbwnpdq1h2n" path="res://assets/HUD/h_box_container.gd" id="1_c4rma"]
+[ext_resource type="Script" uid="uid://dpxikuv046sei" path="res://scenes/canvas_layer.gd" id="1_ek3oe"]
+[ext_resource type="Script" uid="uid://ceya0ucjfeeag" path="res://scenes/button.gd" id="2_ghj5q"]
+
+[sub_resource type="Theme" id="Theme_ghj5q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ek3oe"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_mg525"]
+font_size = 48
+
+[sub_resource type="Theme" id="Theme_c4rma"]
+default_font_size = 48
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ek3oe")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ghj5q")
+alignment = 1
+script = ExtResource("1_c4rma")
+
+[node name="LabelTotalTime" type="Label" parent="Control/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Lived for:
+123
+ seconds"
+label_settings = SubResource("LabelSettings_ek3oe")
+horizontal_alignment = 1
+justification_flags = 161
+
+[node name="LabelTotalScore" type="Label" parent="Control/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Made:
+123
+ coins"
+label_settings = SubResource("LabelSettings_mg525")
+horizontal_alignment = 1
+justification_flags = 161
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.7
+anchor_right = 0.6
+anchor_bottom = 0.9
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_c4rma")
+text = "Play Again?
+
+Press Space!"
+script = ExtResource("2_ghj5q")

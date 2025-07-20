@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -400.0
 
 var player_state = "Playing"
 
+signal player_lost()
+
 func _physics_process(_delta: float) -> void:
 	if player_state == "Playing":
 		var direction := Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
@@ -31,6 +33,7 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite_2d.play("Hurt")
 		print("Game Over")
 		await animated_sprite_2d.animation_finished
+		player_lost.emit()
 		queue_free()
 
 

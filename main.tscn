@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://blnlyh4hslgks"]
+[gd_scene load_steps=14 format=4 uid="uid://blnlyh4hslgks"]
 
 [ext_resource type="Script" uid="uid://nlfflvdrit25" path="res://assets/stage/game_stage.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://df1jquf27q21g" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://d3hicxqo112f4" path="res://assets/stage/tilemap.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://d0uakknpkyny4" path="res://scenes/player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bd1it76lq7i5r" path="res://scenes/enemy/car.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://jmjvlnakr20f" path="res://scenes/canvas_layer.tscn" id="2_kek77"]
 [ext_resource type="Script" uid="uid://dpq2wmoq0bg0g" path="res://assets/HUD/label_timer.gd" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bkilmwu2rowle" path="res://scenes/coin.tscn" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://bbm2xfqydefaa" path="res://label_score.gd" id="6_272bh"]
@@ -25,6 +27,8 @@ font_size = 64
 font_color = Color(0.145, 1, 0.1, 1)
 
 [node name="Main" type="Node"]
+script = ExtResource("1_5vw27")
+game_over_screen = ExtResource("2_kek77")
 metadata/_edit_horizontal_guides_ = [160.0]
 metadata/_edit_vertical_guides_ = [1152.0, 47.0]
 
@@ -112,7 +116,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_top = -10.0
 grow_horizontal = 2
-text = "Test"
+text = "Time: 0"
 label_settings = SubResource("LabelSettings_1bvp3")
 vertical_alignment = 1
 justification_flags = 161
@@ -126,9 +130,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -10.0
 grow_horizontal = 2
-text = "Test"
+text = "Score: 0"
 label_settings = SubResource("LabelSettings_1bvp3")
 script = ExtResource("6_272bh")
 
 [connection signal="timeout" from="GameStage/EnemyTimer" to="GameStage" method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="GameStage/CoinTimer" to="GameStage" method="_on_coin_timer_timeout"]
+[connection signal="player_lost" from="Player" to="." method="_on_player_player_lost"]
